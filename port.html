@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+    body, h1, h2, h3, p, ul, li, form {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Basic body styles */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: goldenrod;
+        background-color: bisque;
+    }
+    
+    /* Header styles */
+    header {
+        background: green;
+        color: tomato;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav ul li a {
+        color: rebeccapurple;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    header .hero {
+        padding: 2rem;
+        background: teal;
+    }
+    
+    header .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    header .hero p {
+        font-size: 1.25rem;
+    }
+    
+    /* About section styles */
+    #about {
+        padding: 2rem;
+        background: darkgray;
+        text-align: center;
+    }
+    
+    #about img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-top: 1rem;
+    }
+    
+    /* Portfolio section styles */
+    #portfolio {
+        padding: 2rem;
+        background: silver;
+    }
+    
+    #portfolio h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .portfolio-item {
+        background: silver;
+        padding: 1rem;
+        margin: 1rem 0;
+        border: 1px solid violet;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .portfolio-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    
+    .portfolio-item h3 {
+        margin: 0.5rem 0;
+    }
+    
+    /* Contact section styles */
+    #contact {
+        padding: 2rem;
+        background: pink;
+    }
+    
+    #contact h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    form label {
+        display: block;
+        margin: 0.5rem 0 0.25rem;
+    }
+    
+    form input, form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid tan;
+        border-radius: 5px;
+    }
+    
+    form button {
+        background: goldenrod;
+        color: rebeccapurple;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    form button:hover {
+        background: greenyellow;
+    }
+    
+    /* Footer styles */
+    footer {
+        background: goldenrod;
+        color: forestgreen;
+        text-align: center;
+        padding: 1rem;
+        position: relative;
+    }
+    
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    footer ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    
+    footer ul li a {
+        color: rebeccapurple;
+        text-decoration: none;
+    }
+    
+    footer p {
+        margin: 0.5rem 0;
+    }
+</style>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: wheat;
+        margin: 0;
+        padding: 0;
+        color: goldenrod;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: thistle;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        text-align: center;
+        border-bottom: 2px solid rebeccapurple;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        color: gray;
+    }
+    .header p {
+        margin: 5px 0;
+        font-size: 1.1em;
+    }
+    .header a {
+        color:sienna;
+        text-decoration: none;
+    }
+    .header a:hover {
+        text-decoration: underline;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section h2 {
+        background: darkolivegreen;
+        color: rosybrown;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 1.4em;
+        margin: 0;
+    }
+    .section ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .section ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid aqua;
+    }
+    .section ul li:last-child {
+        border-bottom: none;
+    }
+    .section p {
+        margin: 0;
+        line-height: 1.6;
+    }
+    .contact-info {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .contact-info a {
+        color: slategray;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+</style><style>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: purple;
+    line-height: 1.6;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+header {
+    background-color: goldenrod;
+    color: teal;
+    padding: 1rem 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav ul li {
+    margin: 0 1rem;
+}
+nav ul li a {
+    color: thistle;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+section {
+    padding: 2rem 0;
+}
+.about .profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.skills .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.skills .skill {
+    flex: 1 1 45%;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid turquoise;
+    border-radius: 5px;
+}
+.portfolio .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio .project {
+    flex: 1 1 45%;
+    margin: 1rem;
+}
+.portfolio img {
+    width: 100%;
+    border-radius: 8px;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.contact form label {
+    margin: 0.5rem 0;
+}
+.contact form input,
+.contact form textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+}
+.contact form button {
+    padding: 0.5rem 1rem;
+    background-color: goldenrod;
+    color: royalblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact form button:hover {
+    background-color: seagreen;
+}
+footer {
+    background-color: sandybrown;
+    color: sienna;
+    text-align: center;
+    padding: 1rem;
+}
+</style>
+</head>
+
+<body>
+   
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm Varunapriya Sundararajan, Frontend Developer </p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm Varunapriya Sundararajan, Frontend Developer </p>
+    
+        <h2>About Me</h2>
+        <p>I am Varunapriya Sundararajan, a passionate, Enthusiastic and dedicated Computer Science Engineering student with a strong foundation in algorithms, data structures, and programming. 
+        Known for an innovative mindset and the ability to approach challenges strategically to find elegant solutions. Eager to leverage academic accomplishments and 
+        hands-on project experience to contribute effectively to a dynamic team as FRONTEND DEVELOPER…
+                  </p>
+        <img src="c:\picturesss and albums\shinning star\IMG-20240614-WA0003.jpg"alt="Profile Picture">
+    </section>
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2>Download My Resume</h2>
+            <p>If you’d like to view more details about my experience and qualifications, you can download my resume using the button below.</p>
+            <a href="c:\cse c\Resumes 172A\VarunapriyaS 73.pdf" download class="resume-button">Download Resume</a>
+        </div>
+    </section>
+    
+
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <img src="c:\Users\varun\Downloads\download (18).jpg" alt="Project 1">
+                    <h3>Image Steganography</h3>
+                    <p>Description: The project of encryption and decryption of image, text, video, audio & used for Security Purposes</p>
+                </div>
+                <div class="project">
+                    <img src="c:\Users\varun\Downloads\WhatsApp Image 2024-08-27 at 23.54.49_3aa213e6.jpg" alt="Project 2">
+                    <h3>Emotion Based Recommendation Website</h3>
+                    <p>Description: Developed a website as a team for enjoying different types of music according to their taste, 
+                        choice & preferences in various languages of Musicals rhythms and trendy troves.. </p>
+                </div>
+               
+             
+                <div class="project">
+                    <img src= "c:\Users\varun\Downloads\sv\IMG-20240615-WA0002.jpg"alt="Project 2">
+                    
+                    <h3>D.A.R. Jewellery Website</h3>
+                    <p>Description: An e-commerce website is a digital platform designed to conduct business transactions over the internet. 
+                        It allows businesses to sell products or services to customers online, offering a range of features to manage sales, interact with customers, and process payments. 
+                        These websites provide a virtual store where users can browse product catalogs, make purchases, and track their orders, all from their own devices.</p>
+                </div>
+                <div class="project">
+                    <img src= "c:\Users\varun\Downloads\download (20).jpg"alt="Project 2">
+                    <h3>Sky news Website</h3>
+                    <p>Description: Developed a website as a team for reading updated news by online. WWW connects every person around the world through news.. </p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>My Projects </h2>
+        
+    
+    
+    
+    
+                    
+      
+      
+       
+
+        
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 4</div>
+              <img src="c:\Users\varun\Downloads\WhatsApp Image 2024-08-27 at 23.54.51_db0822c7.jpg"style="width:90%">
+              <div class="text">Login </div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 4</div>
+              <img src="c:\Users\varun\Downloads\WhatsApp Image 2024-08-27 at 23.54.50_d9282f3d.jpg" style="width:90%">
+            <div class="text">Language AI </div>
+            </div>
+              <div class="mySlides fade">
+              <div class="numbertext">3 / 4</div>
+              <img src="c:\Users\varun\Downloads\WhatsApp Image 2024-08-27 at 23.54.52_b3c06046.jpg" style="width:90%">
+              <div class="text">You Tube </div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 4</div>
+              <img src="c:\Users\varun\Downloads\WhatsApp Image 2024-08-27 at 23.54.49_f64f4d0e.jpg"   style="width:90%">
+              <div class="text">The sparkle </div>
+            </div>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+            
+            <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+            </script>
+
+    
+     
+      
+     
+      
+      
+ 
+    
+   
+    
+    
+  
+    
+    
+     
+    
+   
+  </div>
+  
+  <script>
+  // Script to open and close sidebar
+  function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+
+<div class="section">
+    <h2>Education</h2>
+    <ul>
+        <li>
+            <strong>Bachelor of Engineering in Computer Science</strong> - Sri Shakthi Institute of Engineering of Technology
+            <br>Currently scoring a total CGPA of 8.48*
+        </li>
+    </ul>
+</div>
+
+
+            
+
+            
+            
+           
+            <ul>
+                <li>
+                    <strong>Frontend Developer</strong> - SIET
+                    <br>March 2024 - June 2024
+                    <br>An e-commerce Jewellery website,an e-commerce website is a comprehensive digital solution designed to facilitate online transactions,
+                     enhance customer experience, and drive sales for businesses.
+                     
+                </li>
+                <li>
+                    <strong>Web Developer, UI/UX Designer </strong> - SIET
+                    <br>March 2024 - June 2024
+                    <br>Developed a website as a team for enjoying different types of music according to their taste, 
+                    choice & preferences in various languages of Musicals rhythms and trendy troves.
+                </li>
+
+            </ul>
+        </div>
+        <div class="section">
+           
+        <h2>Logo designing </h2>
+
+
+        
+    
+
+
+    
+        <p>Creating unique logos using styles, images, and designing becomes a passion when we are into it deeply. 
+            Colourful logos are created by coloured images and texts..
+        </p>
+        <br>
+<div class="product-item">
+    <img src="c:\Users\varun\Downloads\logodar.jpg" style="border: 5px solid #FFD700;" alt="Gold Necklace">
+    <h3>tastes & choices in logos </h3>
+    
+</div>
+<div class="section">
+           
+    <h2>Interests</h2>
+            <ul>
+                
+                <li>Go, C, C++, JAVA, PYTHON </li>
+                <li>Responsive Design</li>
+                <li>Canvas, Logo Designing </li>
+                <li>Progressive Web Apps(PWAs)</li>
+                <li>AI/ML sensor fusion skills</li>
+                <li>Creative thinking skills</li>
+                <li>Business Management skills</li>
+                <li>Deep learning Frameworks</li>
+    
+    
+            </ul>
+           
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skill-list">
+                    <div class="skill">
+                        <h3>HTML & CSS</h3>
+                        <p>Creating responsive and visually appealing web pages.</p>
+                    </div>
+                    <div class="skill">
+                        <h3>JavaScript</h3>
+                        <p>Building interactive and dynamic web applications.</p>
+                    </div>
+                    <div class="skill">
+                        <h3>React</h3>
+                        <p>Developing complex, scalable front-end applications.</p>
+                    </div>
+                    <div class="skill">
+                        <h3>Node.js</h3>
+                        <p>Server-side development and building RESTful APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2>Additional projects </h2>
+                <div class="project-grid">
+                    <div class="project">
+                        <img src="c:\Users\varun\Downloads\download (1).jpg" alt="Project 1">
+                        <h3>Sentimental Analysis </h3>
+                        <p>From ancient civilizations to modern interpretations, jewellery has served as more than adornment, often symbolizing status, 
+                            spirituality, and cultural identity.</p>
+                    </div>
+                    
+                
+                    <div class="project">
+                        <img src="c:\Users\varun\Downloads\download (2).jpg" alt="Project 2">
+                        <h3> Product Recommndation App </h3>
+                        <p>"In the rhythm of life, Every beat a heartbeat, every melody a memory." </p>
+                    </div>
+                    
+                    <!-- Add more projects as needed -->
+                </div>
+            </div>
+        </section>
+
+
+        
+            
+
+
+            
+
+            <h2>Activities </h2>
+            <ul>
+            <li>Attended NATIONAL CONFERENCE ON FUTURISTIC TRENDS IN COMPUTING AND INFORMATION TECHNOLOGY for PAPER PRESENTATION on topic VIRTUAL REALITY AND AUGMENTED REALITY on MARCH 28,2024
+                at P.A. College of Engineering and Technology ( An Autonomous Institution ), POLLACHI, COIMBATORE-642 002.</li>
+
+            <li> Published JOURNAL PAPER on JOURNAL OF TECHNOLOGY PUBLICATIONS on title IMPLEMENTATION OF IMAGE STEGANOGRAPHY for mini project IMAGE STEGANOGRAPHY </li>
+            
+            
+             <li>Certified with C, C++ Programming at BHARATHIDASAN UNIVERSITY at 2018 and placed First Class with EXEMPLARY.</li>
+       
+             <li>Attended Rotaract club of PSG CAS TARANG version 10.0 & participated in the events like Wealth from Waste, Logo Designing, Extempore.</li>
+
+             <li>IMA MENTAL ARITHMETIC ACADEMY Pvt. Ltd. Conducted Zhusuan & Mental Arithmetic Skills on 22.08.2015 at Kumara Raja Muthiah Hall, 
+             Chennai-28 and WON third prize in group Grade 10 from Coimbatore Centre, Tamil Nadu.</li>
+
+             <li>Won Second Prize at INTERSTATE LEVEL OPEN YOGASANA CHAMPIONSHIP organized by GRD-CPF Matriculation Higher Secondary School, Coimbatore.</li>  </ul>
+             <img src="c:\Users\varun\Downloads\images (5).jpg" alt="Profile Picture">
+  <br>
+  <br>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <br>
+
+
+    <!-- Footer Section -->
+    <div class="container">
+        <div class="header">
+            <h1>Varunapriya Sundararajan </h1>
+            <p>Front-End Developer | UI/UX Designer</p>
+            <p>Email: <a href="mailto.varunapriysj1004gmail.com">varunapriysj1004gmail.com</a></p>
+            <p>Phone: (91) 9763717358</p>
+            <div class="w3-section">
+            <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Tamil Nadu, Chennai </p>
+            
+          </div>
+           
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/Varunapriya" target="_blank" title="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">linkedin.com/in/VarunapriyaSundararajan</a></p>
+           
+                </a>
+            </div>
+            <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/yourprofile" target="_blank">GitHub Profile</a></p>
+                </div>
+            <p>Website: <a href="https://www.johndoe.com" target="_blank">Varunapriya Sundararajan.com</a></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
