@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: maroon;
+    padding: 10px 0;
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: rebeccapurple;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Valuable jewellery in a gallery </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: peachpuff;
+    color:maroon;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    width: calc(33.333% - 1rem);
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: goldenrod;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+footer {
+    background: peachpuff;
+    color: teal;
+    padding: 1rem;
+    text-align: center;
+}
+</style>
+    <main>
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="c:\Users\varun\Downloads\download (91).jpg" alt="Description of Jewelry 1">
+                <div class="description">
+                    <p> The unique Jewellery shhows the pretty snd value of it when we wear it over us.
+                        It maintains and symbolizes the love when we colect them according to our interests and needs..
+                    </p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="c:\Users\varun\Downloads\download (96).jpg" alt="Description of Jewelry 2">
+                <div class="description">
+                    <p> The Jewel is known to be pretty when we wear it love and the beauty increases with the colour and quality of the jewel that we purchase for ourself..</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="c:\Users\varun\Downloads\download (92).jpg" alt="Description of Jewelry 2">
+                <div class="description">
+                    <p> The value increase with the pride when we purchase it for the one we love the most.
+                        The Jewel is not only the thing to be deserved to valued and preserved..
+                    </p>
+                </div>
+            </div>
+            <!-- Add more gallery items as needed -->
+        </section>
+    </main>
+    <script>
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                const src = img.getAttribute('src');
+                const description = img.nextElementSibling.textContent;
+                showModal(src, description);
+            });
+        });
+    
+        function showModal(src, description) {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img src="${src}" alt="Jewelry Image">
+                    <p>${description}</p>
+                </div>
+            `;
+            document.body.appendChild(modal);
+    
+            modal.querySelector('.close').addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+        }
+    </script>
+    <style>
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-content {
+        background: #fff;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+    }
+    
+    .modal-content img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 1rem;
+    }
+</style> 
+<header>
+        <h1>Vivid Collections </h1>
+    </header>
+    <main>
+        <section id="gallery">
+            <div class="container">
+                <h2>Gallery shows the reality and purity of the unique collection of jewelleries </h2>
+                <div class="gallery">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (49).jpg" alt="Image 1" onclick="openLightbox(this)">
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (45).jpg" alt="Image 2" onclick="openLightbox(this)">
+                    </div>
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (44).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                     <!-- Gallery Item 4 -->
+                     <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (46).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div> 
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (47).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div> 
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (48).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                     <!-- Gallery Item 7 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (51).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div> 
+                    <!-- Gallery Item 8 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (24).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                     <!-- Gallery Item 9 -->
+                     <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (21).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                     <!-- Gallery Item 10 -->
+                     <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (52).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                     <!-- Gallery Item 11 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (50).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                     <!-- Gallery Item 12 -->
+                    <div class="gallery-item">
+                        <img src="c:\Users\varun\Downloads\download (44).jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                    <!-- Add more gallery items as needed -->
+                </div>
+            </div>
+        </section>
+        <br>
+        <header>
+            <div class="container">
+                <h1>contact us </h1>
+                </div></header>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <form action="submit-form.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+                    <br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+     
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+    function openLightbox(img) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+    }
+    </script>
+</body>
+</html>
